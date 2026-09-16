@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FAF8F3;
+    --bg-secondary: #F3EEE5;
+    --card-bg: #FFFFFF;
+    --primary: #71866A;
+    --primary-hover: #5d7056;
+    --secondary: #C9A77B;
+    --accent: #C98262;
+    --dark-text: #26312B;
+    --muted-text: #687068;
+    --soft-green: #E7EEE4;
+    --soft-beige: #EEE3D3;
+    --soft-terracotta: #F3E1D8;
+    --border-color: #E3DED4;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #26312B;
+    background-color: #FAF8F3;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent iOS zoom on input focus while maintaining accessibility */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Playfair Display', 'DM Serif Display', Georgia, serif;
+  }
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-display {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A77B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71866A;
+}
