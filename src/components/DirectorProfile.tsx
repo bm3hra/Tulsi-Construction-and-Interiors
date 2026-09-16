@@ -1,44 +1,13 @@
-import { useState, useEffect, useRef, ChangeEvent } from 'react';
-import { Phone, MessageCircle, Mail, MapPin, Award, CheckCircle, Upload, Sparkles, ShieldCheck } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Award, CheckCircle, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 import { BRAND } from '../data/siteData';
 
-export default function DirectorProfile() {
-  const [photoUrl, setPhotoUrl] = useState<string>('');
-  const [activeTab, setActiveTab] = useState<'formal' | 'site'>('formal');
-  const fileInputRef = useRef<HTMLInputElement>(null);
+interface DirectorProfileProps {
+  onOpenConsultation?: () => void;
+}
 
-  // Load persisted photo if available, otherwise check public or fallback
-  useEffect(() => {
-    const saved = localStorage.getItem('tulsi_director_photo');
-    if (saved) {
-      setPhotoUrl(saved);
-    }
-  }, []);
-
-  const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const result = event.target?.result as string;
-        setPhotoUrl(result);
-        try {
-          localStorage.setItem('tulsi_director_photo', result);
-        } catch {
-          // localStorage may exceed quota if image is very large
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  // Fallback high-quality curated architectural executive portrait
-  const defaultExecutivePhoto =
-    activeTab === 'formal'
-      ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'
-      : 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80';
-
-  const currentDisplayPhoto = photoUrl || defaultExecutivePhoto;
+export default function DirectorProfile({ onOpenConsultation }: DirectorProfileProps) {
+  // Permanent Kailash Moyal photo asset stored in public/kailash-moyal.svg
+  const directorPhoto = BRAND.directorPhoto || '/kailash-moyal.svg';
 
   return (
     <div
@@ -50,96 +19,52 @@ export default function DirectorProfile() {
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        {/* Left Column: Portrait Photo Showcase */}
+        {/* Left Column: Permanent Portrait Photo Showcase */}
         <div className="lg:col-span-5 flex flex-col items-center">
           <div className="relative group w-full max-w-sm sm:max-w-md mx-auto">
             
             {/* Outer Decorative Frame */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-[#F3EEE5] aspect-4/5 sm:aspect-square lg:aspect-4/5">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-[#141916] aspect-square sm:aspect-4/5">
               <img
-                src={currentDisplayPhoto}
-                alt="Kailash Moyal - Founder & Project Director of Tulsi Construction"
+                src={directorPhoto}
+                alt="Kailash Moyal - Founder & Project Director of Tulsi Construction & Interiors"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = defaultExecutivePhoto;
-                }}
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-103"
+                className="w-full h-full object-cover object-top sm:object-center transition-transform duration-500 group-hover:scale-103"
               />
 
-              {/* Gradient Overlay for Text Legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#26312B]/85 via-transparent to-transparent opacity-90" />
+              {/* Gentle Gradient at base to keep buttons and jacket visible while ensuring text readability */}
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
 
               {/* Floating Director Badge */}
-              <div className="absolute top-3 left-3 bg-[#71866A] text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5 backdrop-blur-xs">
+              <div className="absolute top-3.5 left-3.5 bg-[#71866A] text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5 backdrop-blur-xs">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Leadership</span>
+                <span>Executive Leadership</span>
               </div>
 
               {/* Bottom Details on Image */}
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <div className="font-editorial text-xl sm:text-2xl font-bold tracking-wide">
+              <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                <div className="font-editorial text-xl sm:text-2xl font-bold tracking-wide leading-tight">
                   {BRAND.contactPerson}
                 </div>
-                <div className="text-xs sm:text-sm text-[#E7EEE4] font-medium mt-0.5 flex items-center space-x-1.5">
+                <div className="text-xs text-[#E7EEE4] font-medium mt-0.5 flex items-center space-x-1.5">
                   <Award className="w-3.5 h-3.5 text-[#C9A77B]" />
                   <span>Founder & Project Director</span>
                 </div>
               </div>
             </div>
 
-            {/* Custom Photo Upload & Mode Controls */}
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-2 w-full">
-              {/* Photo Mode Switcher */}
-              <div className="inline-flex bg-[#FAF8F3] p-1 rounded-lg border border-[#E3DED4] text-xs">
+            {/* Direct Project Consultation Button below photo */}
+            {onOpenConsultation && (
+              <div className="mt-4 w-full">
                 <button
                   type="button"
-                  onClick={() => setActiveTab('formal')}
-                  className={`px-3 py-1.5 rounded-md font-medium transition-colors ${
-                    activeTab === 'formal'
-                      ? 'bg-[#71866A] text-white shadow-xs'
-                      : 'text-[#687068] hover:text-[#26312B]'
-                  }`}
+                  onClick={onOpenConsultation}
+                  className="w-full py-3 px-4 rounded-xl bg-[#71866A] hover:bg-[#5d7056] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm flex items-center justify-center space-x-2 cursor-pointer group"
                 >
-                  Formal
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('site')}
-                  className={`px-3 py-1.5 rounded-md font-medium transition-colors ${
-                    activeTab === 'site'
-                      ? 'bg-[#71866A] text-white shadow-xs'
-                      : 'text-[#687068] hover:text-[#26312B]'
-                  }`}
-                >
-                  On-Site
+                  <span>Discuss your project with Kailash Moyal</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
-
-              {/* Photo Upload Button */}
-              <div>
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  accept="image/*"
-                  onChange={handleFileUpload}
-                  className="hidden"
-                />
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="inline-flex items-center space-x-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-lg bg-[#F3EEE5] hover:bg-[#EEE3D3] text-[#26312B] border border-[#E3DED4] transition-all cursor-pointer shadow-2xs"
-                  title="Upload / Update photo directly"
-                >
-                  <Upload className="w-3.5 h-3.5 text-[#71866A]" />
-                  <span>Update Photo</span>
-                </button>
-              </div>
-            </div>
-
-            {photoUrl && (
-              <p className="text-[11px] text-[#71866A] mt-1.5 text-center font-medium">
-                ✓ Custom photo loaded & saved locally
-              </p>
             )}
           </div>
         </div>

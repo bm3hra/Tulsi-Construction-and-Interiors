@@ -14,6 +14,7 @@ export const BRAND = {
   instagramUrl: "https://www.instagram.com/tulsi.interiordesign/",
   location: "Ajmer, Rajasthan, India",
   serviceArea: "Pan Rajasthan",
+  directorPhoto: "/kailash-moyal.svg",
   tagline: "Turning Dreams into Well-Designed Reality.",
   secondaryTagline: "Complete Construction & Interior Solutions Across Rajasthan",
   brandMessage: "Tulsi Construction – Turning Dreams into Well-Designed Reality. From construction to interiors, renovation and turnkey execution, we provide complete project solutions under one roof."

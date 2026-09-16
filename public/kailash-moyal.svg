@@ -1,0 +1,347 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients for Event/Garden Night Bokeh -->
+    <radialGradient id="nightBg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#18231C"/>
+      <stop offset="45%" stop-color="#0F1713"/>
+      <stop offset="100%" stop-color="#060907"/>
+    </radialGradient>
+
+    <!-- Warm Event Bokeh Glows (Matching real photo background) -->
+    <radialGradient id="bokehWarm1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E28743" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#9C522B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#9C522B" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bokehWarm2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F7A261" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#C25E28" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#C25E28" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bokehGreen1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B7A44" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#1E4424" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1E4424" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bokehGreen2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#559660" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#234D29" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#234D29" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Skin Tones matching Kailash Moyal's photograph -->
+    <radialGradient id="skinBase" cx="50%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#ECC5A8"/>
+      <stop offset="35%" stop-color="#DFAC89"/>
+      <stop offset="70%" stop-color="#CA8E67"/>
+      <stop offset="100%" stop-color="#A86845"/>
+    </radialGradient>
+
+    <radialGradient id="foreheadGaze" cx="50%" cy="30%" r="35%">
+      <stop offset="0%" stop-color="#F9DFC9" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#DFAC89" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A86845" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#6F3B20" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Eyeglasses Royal Cobalt Blue Gradients (Signature Feature) -->
+    <linearGradient id="glassesBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="25%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="75%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+
+    <linearGradient id="glassesSheen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="50%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+
+    <!-- Lens Specular Glint -->
+    <linearGradient id="lensGlint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="35%" stop-color="#60A5FA" stop-opacity="0.12"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Charcoal Grey Nehru Jacket Fabric Texture -->
+    <linearGradient id="greyVest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="30%" stop-color="#475569"/>
+      <stop offset="70%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <pattern id="tweedPattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#404B5A"/>
+      <rect width="3" height="3" fill="#4B5869"/>
+      <rect x="3" y="3" width="3" height="3" fill="#36404E"/>
+    </pattern>
+
+    <!-- Button Gradient -->
+    <radialGradient id="darkButton" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="60%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </radialGradient>
+
+    <!-- Hair & Beard Gradients -->
+    <linearGradient id="hairBlack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#222A35"/>
+      <stop offset="30%" stop-color="#141920"/>
+      <stop offset="100%" stop-color="#080B0F"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="softDepth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="glassesDepth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#050B14" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- 1. BACKGROUND WITH REALISTIC NIGHT EVENT BOKEH -->
+  <rect width="600" height="600" fill="url(#nightBg)"/>
+
+  <!-- Bokeh orbs in background matching Kailash-Moyal.png photo -->
+  <g id="bokehLights">
+    <!-- Top Warm Canopy Glow -->
+    <ellipse cx="300" cy="18" rx="280" ry="40" fill="#9C3A27" opacity="0.35"/>
+    <ellipse cx="300" cy="2" rx="220" ry="25" fill="#E26D5C" opacity="0.4"/>
+
+    <!-- Left & Right Bokeh Foliage / Party Lights -->
+    <circle cx="90" cy="120" r="55" fill="url(#bokehGreen1)"/>
+    <circle cx="50" cy="220" r="70" fill="url(#bokehGreen2)"/>
+    <circle cx="110" cy="300" r="60" fill="url(#bokehWarm1)"/>
+    <circle cx="65" cy="400" r="50" fill="url(#bokehWarm2)"/>
+
+    <circle cx="510" cy="110" r="60" fill="url(#bokehWarm1)"/>
+    <circle cx="540" cy="230" r="80" fill="url(#bokehGreen1)"/>
+    <circle cx="490" cy="340" r="65" fill="url(#bokehWarm2)"/>
+    <circle cx="530" cy="420" r="50" fill="url(#bokehGreen2)"/>
+
+    <!-- Warm backlight rim on subject -->
+    <circle cx="300" cy="280" r="180" fill="url(#bokehWarm1)" opacity="0.25"/>
+  </g>
+
+  <!-- 2. SHIRT SLEEVES & CHEST UNDERLAY (WHITE) -->
+  <g id="shirtUnderlay" filter="url(#softDepth)">
+    <!-- White shirt sleeves peeking out on shoulders -->
+    <path d="M 65,600 C 65,490 100,430 145,395 L 180,480 L 140,600 Z" fill="#F8FAFC"/>
+    <path d="M 535,600 C 535,490 500,430 455,395 L 420,480 L 460,600 Z" fill="#E2E8F0"/>
+    
+    <!-- White Inner Kurta / Shirt Center Placket -->
+    <path d="M 260,370 L 340,370 L 350,470 L 250,470 Z" fill="#FFFFFF"/>
+    <path d="M 285,370 L 300,405 L 315,370 Z" fill="#E2E8F0"/>
+  </g>
+
+  <!-- 3. CHARCOAL GREY NEHRU JACKET / VEST -->
+  <g id="nehruJacket" filter="url(#softDepth)">
+    <!-- Main Vest Body -->
+    <path d="M 125,600 L 145,410 C 158,375 195,355 240,348 L 300,352 L 360,348 C 405,355 442,375 455,410 L 475,600 Z" fill="url(#greyVest)"/>
+    <path d="M 125,600 L 145,410 C 158,375 195,355 240,348 L 300,352 L 360,348 C 405,355 442,375 455,410 L 475,600 Z" fill="url(#tweedPattern)" opacity="0.22"/>
+
+    <!-- Left Armhole / Shoulder Seam -->
+    <path d="M 145,410 C 170,440 185,510 180,600" fill="none" stroke="#1E293B" stroke-width="2" opacity="0.5"/>
+    <!-- Right Armhole / Shoulder Seam -->
+    <path d="M 455,410 C 430,440 415,510 420,600" fill="none" stroke="#1E293B" stroke-width="2" opacity="0.5"/>
+
+    <!-- Mandarin Collar of the Vest -->
+    <path d="M 235,348 C 235,325 265,320 300,320 C 335,320 365,325 365,348 C 365,360 340,366 300,366 C 260,366 235,360 235,348 Z" fill="#3B4656" stroke="#1E293B" stroke-width="1.5"/>
+    
+    <!-- White Shirt Collar Inner Rim (visible above mandarin collar as in photo) -->
+    <path d="M 242,335 C 260,322 340,322 358,335" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Center Opening Placket of Nehru Jacket -->
+    <path d="M 293,365 L 307,365 L 306,600 L 294,600 Z" fill="#293341"/>
+    <line x1="300" y1="365" x2="300" y2="600" stroke="#18202B" stroke-width="2"/>
+
+    <!-- Signature Dark Round Button with 4 holes (as seen on Kailash's vest) -->
+    <g transform="translate(300, 420)">
+      <circle cx="0" cy="0" r="9" fill="url(#darkButton)" stroke="#475569" stroke-width="1" filter="url(#softDepth)"/>
+      <circle cx="0" cy="0" r="7" fill="none" stroke="#1E293B" stroke-width="1"/>
+      <circle cx="-2.5" cy="-2.5" r="1" fill="#94A3B8"/>
+      <circle cx="2.5" cy="-2.5" r="1" fill="#94A3B8"/>
+      <circle cx="-2.5" cy="2.5" r="1" fill="#94A3B8"/>
+      <circle cx="2.5" cy="2.5" r="1" fill="#94A3B8"/>
+      <!-- Cross Stitch Thread -->
+      <line x1="-2.5" y1="-2.5" x2="2.5" y2="2.5" stroke="#CBD5E1" stroke-width="0.75"/>
+      <line x1="2.5" y1="-2.5" x2="-2.5" y2="2.5" stroke="#CBD5E1" stroke-width="0.75"/>
+    </g>
+
+    <!-- Second Button lower down -->
+    <g transform="translate(300, 500)">
+      <circle cx="0" cy="0" r="9" fill="url(#darkButton)" stroke="#475569" stroke-width="1" filter="url(#softDepth)"/>
+      <circle cx="0" cy="0" r="7" fill="none" stroke="#1E293B" stroke-width="1"/>
+      <circle cx="-2.5" cy="-2.5" r="1" fill="#94A3B8"/>
+      <circle cx="2.5" cy="-2.5" r="1" fill="#94A3B8"/>
+      <circle cx="-2.5" cy="2.5" r="1" fill="#94A3B8"/>
+      <circle cx="2.5" cy="2.5" r="1" fill="#94A3B8"/>
+    </g>
+  </g>
+
+  <!-- 4. NECK & HEAD BASE -->
+  <g id="headBase">
+    <!-- Neck -->
+    <path d="M 245,280 L 245,345 C 265,355 335,355 355,345 L 355,280 Z" fill="url(#skinBase)"/>
+    <!-- Deep Neck Shadow under full beard -->
+    <path d="M 235,310 C 260,345 340,345 365,310 C 365,345 340,358 300,358 C 260,358 235,345 235,310 Z" fill="url(#skinShadow)"/>
+
+    <!-- Left Ear -->
+    <g id="leftEar">
+      <path d="M 188,205 C 172,218 172,252 188,268 L 195,240 Z" fill="url(#skinBase)"/>
+      <path d="M 185,218 C 178,226 179,242 187,252" fill="none" stroke="#9C522B" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Right Ear -->
+    <g id="rightEar">
+      <path d="M 412,205 C 428,218 428,252 412,268 L 405,240 Z" fill="url(#skinBase)"/>
+      <path d="M 415,218 C 422,226 421,242 413,252" fill="none" stroke="#9C522B" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Face Shape (Full, handsome, rounded-square masculine jaw) -->
+    <path d="M 195,170 C 195,115 230,95 300,95 C 370,95 405,115 405,170 C 405,230 400,270 350,305 C 320,325 280,325 250,305 C 200,270 195,230 195,170 Z" fill="url(#skinBase)" filter="url(#softDepth)"/>
+
+    <!-- Forehead Key Highlight (Photographic flash reflection) -->
+    <ellipse cx="300" cy="140" rx="55" ry="30" fill="url(#foreheadGaze)"/>
+    <ellipse cx="285" cy="135" rx="35" ry="18" fill="#FFFFFF" opacity="0.18"/>
+
+    <!-- Cheek Warm Highlights -->
+    <ellipse cx="240" cy="205" rx="20" ry="12" fill="#F7D3BA" opacity="0.25" transform="rotate(-10 240 205)"/>
+    <ellipse cx="360" cy="205" rx="20" ry="12" fill="#F7D3BA" opacity="0.25" transform="rotate(10 360 205)"/>
+  </g>
+
+  <!-- 5. NOSE & EYES -->
+  <g id="features">
+    <!-- Nose with flash highlights -->
+    <g id="nose">
+      <!-- Soft Bridge Shadow -->
+      <path d="M 290,158 L 285,215 L 293,224 L 300,225 L 307,224 L 315,215 L 310,158 Z" fill="none"/>
+      <path d="M 288,162 C 288,185 282,212 280,218 C 285,224 295,226 300,226 C 305,226 315,224 320,218 C 318,212 312,185 312,162" fill="none"/>
+      <!-- Nose tip & nostrils -->
+      <path d="M 284,218 C 287,224 293,226 300,226 C 307,226 313,224 316,218" fill="none" stroke="#9C522B" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="282" cy="222" rx="4" ry="2.5" fill="#451810"/>
+      <ellipse cx="318" cy="222" rx="4" ry="2.5" fill="#451810"/>
+      <!-- Nose Bridge Highlight -->
+      <line x1="299" y1="160" x2="299" y2="215" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>
+      <circle cx="300" cy="217" r="3" fill="#FFFFFF" opacity="0.4"/>
+    </g>
+
+    <!-- Eyes (Direct, warm, confident gaze) -->
+    <g id="eyes">
+      <!-- Left Eye -->
+      <g id="leftEye">
+        <path d="M 235,182 C 248,174 265,174 276,182 C 265,190 248,190 235,182 Z" fill="#FFFFFF"/>
+        <!-- Iris & Pupil -->
+        <circle cx="256" cy="182" r="8" fill="#3D2012"/>
+        <circle cx="256" cy="182" r="4" fill="#0A0E17"/>
+        <!-- Catchlight reflection -->
+        <circle cx="254" cy="179" r="2" fill="#FFFFFF"/>
+        <circle cx="258" cy="183" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <!-- Eyelash / Lid Line -->
+        <path d="M 233,182 C 246,172 267,172 278,182" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Right Eye -->
+      <g id="rightEye">
+        <path d="M 324,182 C 335,174 352,174 365,182 C 352,190 335,190 324,182 Z" fill="#FFFFFF"/>
+        <!-- Iris & Pupil -->
+        <circle cx="344" cy="182" r="8" fill="#3D2012"/>
+        <circle cx="344" cy="182" r="4" fill="#0A0E17"/>
+        <!-- Catchlight reflection -->
+        <circle cx="342" cy="179" r="2" fill="#FFFFFF"/>
+        <circle cx="346" cy="183" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <!-- Eyelash / Lid Line -->
+        <path d="M 322,182 C 333,172 354,172 367,182" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Eyebrows (Dense, Well-Groomed, Jet Black) -->
+      <path d="M 224,166 C 240,154 264,156 278,165 C 266,160 242,158 226,168 Z" fill="#0D121B"/>
+      <path d="M 376,166 C 360,154 336,156 322,165 C 334,160 358,158 374,168 Z" fill="#0D121B"/>
+    </g>
+  </g>
+
+  <!-- 6. FULL THICK DENSE BLACK BEARD & MUSTACHE (Kailash Moyal's Signature Feature) -->
+  <g id="beardAndMustache">
+    <!-- Massive full beard base hugging the whole lower face -->
+    <path d="M 195,208 C 190,265 205,335 250,358 C 280,372 320,372 350,358 C 395,335 410,265 405,208 C 405,240 398,285 365,315 C 335,340 265,340 235,315 C 202,285 195,240 195,208 Z" fill="url(#hairBlack)"/>
+    
+    <!-- Full Volume Beard from Cheeks to Chin -->
+    <path d="M 195,225 C 195,285 235,355 300,360 C 365,355 405,285 405,225 C 395,265 375,305 348,328 C 322,350 278,350 252,328 C 225,305 205,265 195,225 Z" fill="#080C12"/>
+
+    <!-- Razor-Sharp Groomed Upper Cheek Beard Cut (Matching exact photo slope) -->
+    <path d="M 196,218 C 215,242 242,260 275,268 C 255,264 228,252 208,230 Z" fill="#080C12"/>
+    <path d="M 404,218 C 385,242 358,260 325,268 C 345,264 372,252 392,230 Z" fill="#080C12"/>
+
+    <!-- Mustache (Dense, Comb-Styled, Full Coverage above Lip) -->
+    <path d="M 270,248 C 285,242 296,245 300,249 C 304,245 315,242 330,248 C 338,252 334,264 322,263 C 308,262 303,256 300,260 C 297,256 292,262 278,263 C 266,264 262,252 270,248 Z" fill="url(#hairBlack)"/>
+    <path d="M 272,250 C 288,246 298,252 300,256 C 302,252 312,246 328,250 C 320,258 308,256 300,262 C 292,256 280,258 272,250 Z" fill="#080C12"/>
+
+    <!-- Soul Patch below Lower Lip -->
+    <polygon points="292,266 308,266 304,278 296,278" fill="#080C12"/>
+
+    <!-- Soft Lip Color visible between mustache and soul patch -->
+    <path d="M 284,258 C 294,255 306,255 316,258 C 310,264 290,264 284,258 Z" fill="#9E5647" opacity="0.6"/>
+  </g>
+
+  <!-- 7. STYLED BLACK HAIR (UPWARD VOLUME, SIDE SWEPT) -->
+  <g id="hairTop">
+    <!-- Hair Volume Base -->
+    <path d="M 194,180 C 188,135 200,98 232,74 C 265,50 335,50 368,74 C 400,98 412,135 406,180 C 400,145 392,108 360,90 C 328,72 272,72 240,90 C 208,108 200,145 194,180 Z" fill="url(#hairBlack)"/>
+    
+    <!-- Top Modern Swept-Up Volume (Matching Kailash's high textured hair) -->
+    <path d="M 196,155 C 190,118 212,80 250,62 C 285,46 325,50 358,66 C 388,82 404,115 402,155 C 395,110 372,76 328,64 C 285,52 232,70 196,155 Z" fill="#1C2430"/>
+    
+    <!-- Hair Texture Strands with Studio Highlights -->
+    <path d="M 220,102 C 255,80 305,80 345,96 C 320,84 270,88 235,108 Z" fill="#3D4B5C" opacity="0.45"/>
+    <path d="M 245,86 C 282,70 326,74 362,94 C 338,78 288,82 255,98 Z" fill="#4B5869" opacity="0.4"/>
+
+    <!-- Sideburns connecting seamlessly into the beard -->
+    <path d="M 194,165 L 192,225 L 200,225 L 200,175 Z" fill="#0D121B"/>
+    <path d="M 406,165 L 408,225 L 400,225 L 400,175 Z" fill="#0D121B"/>
+  </g>
+
+  <!-- 8. THE SIGNATURE ROYAL BLUE RECTANGULAR GLASSES -->
+  <g id="signatureGlasses" filter="url(#glassesDepth)">
+    <!-- Left Blue Frame Rim -->
+    <rect x="220" y="162" width="68" height="42" rx="7" fill="none" stroke="url(#glassesBlue)" stroke-width="5.5"/>
+    <!-- Right Blue Frame Rim -->
+    <rect x="312" y="162" width="68" height="42" rx="7" fill="none" stroke="url(#glassesBlue)" stroke-width="5.5"/>
+
+    <!-- Frame Top & Corner Highlights (Vibrant Cobalt Sheen) -->
+    <path d="M 222,164 L 286,164" stroke="url(#glassesSheen)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 314,164 L 378,164" stroke="url(#glassesSheen)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 221,170 L 221,190" stroke="#60A5FA" stroke-width="1.5" opacity="0.8"/>
+    <path d="M 379,170 L 379,190" stroke="#60A5FA" stroke-width="1.5" opacity="0.8"/>
+
+    <!-- Center Bridge (Distinctive Blue Arch) -->
+    <path d="M 288,172 C 294,169 306,169 312,172" fill="none" stroke="url(#glassesBlue)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 290,171 C 295,169 305,169 310,171" fill="none" stroke="#93C5FD" stroke-width="1.5"/>
+
+    <!-- Frame Temples extending towards ears -->
+    <path d="M 220,172 L 192,180" fill="none" stroke="url(#glassesBlue)" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 380,172 L 408,180" fill="none" stroke="url(#glassesBlue)" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Crystal Clear Glass Coating with subtle reflection glint -->
+    <rect x="222" y="164" width="64" height="38" rx="5" fill="url(#lensGlint)"/>
+    <rect x="314" y="164" width="64" height="38" rx="5" fill="url(#lensGlint)"/>
+
+    <!-- Diagonal Glass Glare lines -->
+    <polygon points="228,200 255,166 265,166 238,200" fill="#FFFFFF" opacity="0.18"/>
+    <polygon points="320,200 347,166 357,166 330,200" fill="#FFFFFF" opacity="0.18"/>
+  </g>
+
+  <!-- 9. SUBTLE POLISHED VIGNETTE OVERLAY -->
+  <rect width="600" height="600" fill="none" stroke="#0B0F0D" stroke-width="8" opacity="0.35"/>
+</svg>

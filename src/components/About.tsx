@@ -158,7 +158,7 @@ export default function About({ onOpenConsultation }: AboutProps) {
         </div>
 
         {/* Dedicated Kailash Moyal (Founder & Project Director) Showcase */}
-        <DirectorProfile />
+        <DirectorProfile onOpenConsultation={onOpenConsultation} />
 
       </div>
     </section>
